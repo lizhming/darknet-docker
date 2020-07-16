@@ -17,7 +17,7 @@ Tags means options in the Makefile when darknet binary was built. You can check 
 
 ```sh
 $ docker run --rm -v $PWD:/workspace -w /workspace \
-        daisukekobayashi/darknet:cpu darknet ...
+        lizhming/darknet:cpu darknet ...
 ```
 
 Start a Darknet cpu container.
@@ -26,7 +26,7 @@ Start a Darknet cpu container.
 
 ```sh
 $ docker run --runtime=nvidia --rm -v $PWD:/workspace -w /workspace \
-        daisukekobayashi/darknet:gpu darknet ...
+        lizhming/darknet:gpu darknet ...
 ```
 
 You need to specify nvidia runtime when you use Darknet gpu container.
@@ -37,7 +37,7 @@ You need to specify nvidia runtime when you use Darknet gpu container.
 $ git clone https://github.com/AlexeyAB/darknet.git
 $ cd darknet/build/x64
 $ curl -L -O https://pjreddie.com/media/files/yolov3.weights
-$ docker run --runtime=nvidia --rm -v $PWD:/workspace -w /workspace daisukekobayashi/darknet:gpu \
+$ docker run --runtime=nvidia --rm -v $PWD:/workspace -w /workspace lizhming/darknet:gpu \
         darknet detector test data/coco.data yolov3.cfg yolov3.weights -i 0 -thresh 0.25 dog.jpg -ext_output
 ```
 
@@ -46,7 +46,7 @@ This is example to test yolov3 using Darknet gpu container.
 ---
 
 ```sh
-$ docker run --rm -it daisukekobayashi/darinet:cpu bash -c 'echo "$SOURCE_BRANCH" && echo "$SOURCE_COMMIT"'
+$ docker run --rm -it lizhming/darinet:cpu bash -c 'echo "$SOURCE_BRANCH" && echo "$SOURCE_COMMIT"'
 ```
 
 Check darknet version.
